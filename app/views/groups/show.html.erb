@@ -1,0 +1,51 @@
+<h1>
+  <%= @group.name %>
+</h1>
+
+<div id="request">
+  <p class="alert alert-success">Thanks for your submission!</p>
+</div>
+
+<hr></hr>
+
+<div class="picture">
+  <%= image_tag("avatar.png")  %>
+  <p>admin</p>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Request Group Access</button>
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+      Why would you like to join?
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Request "<%= @group.name %>" Access</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Thanks for your inquiry, by clicking 'Submit'</br>below, the admin will be notified of your request.</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="banner" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <p>
+      <div class="title"><%= @group.description %></div>
+    </p>
+    <div class="back">
+      <%= link_to 'Back', groups_path %>
+    </div>
+  </div>
+</div>
+
